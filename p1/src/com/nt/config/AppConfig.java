@@ -1,4 +1,3 @@
-//AppConfig.java(Target Class)
 package com.nt.config;
 
 import java.time.LocalTime;
@@ -8,20 +7,15 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages="com.nt.sbeans")
+@ComponentScan(basePackages = "com.nt.beans")
 public class AppConfig 
 {
-	public AppConfig()
+	@Bean(name="ltime")
+	public LocalTime createTime()
 	{
-		System.out.println("AppConfig.0-arg Constructor");
-		
-	}
-	@Bean(name="time")
-	public LocalTime createLTime()
-	{
+		System.out.println("AppConfig.createTime()");
 		return LocalTime.now();
 	}
 	
 
 }
- 
