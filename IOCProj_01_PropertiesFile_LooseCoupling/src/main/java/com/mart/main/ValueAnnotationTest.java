@@ -13,6 +13,8 @@ public class ValueAnnotationTest {
 		PersonInfo info=ctx.getBean("pinfo",PersonInfo.class);
 		System.out.println(info);
 		ctx.close();
+
+//okk
 		
 	}
 
