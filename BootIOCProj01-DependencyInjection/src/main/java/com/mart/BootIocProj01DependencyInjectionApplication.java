@@ -13,14 +13,20 @@ import com.mart.sbeans.SeasonFinder;
 @SpringBootApplication
 public class BootIocProj01DependencyInjectionApplication 
 {
+	public BootIocProj01DependencyInjectionApplication()
+	{
+		System.out.println("BootIocProj01DependencyInjectionApplication.BootIocProj01DependencyInjectionApplication::0-param constructor");
+	}
 	@Bean(name="dt")
 	public LocalDate createLDate()
 	{
+		System.out.println("BootIocProj01DependencyInjectionApplication.createLDate()");
 		return LocalDate.now();
 	}
 
 	public static void main(String[] args)
 	{
+		System.out.println("BootIocProj01DependencyInjectionApplication.main()(start)");
 		//get IOC container
 		ApplicationContext ctx=SpringApplication.run(BootIocProj01DependencyInjectionApplication.class, args);
 		//ConfigurableApplicationContext ctx=SpringApplication.run(BootIocProj01DependencyInjectionApplication.class, args);
@@ -37,6 +43,7 @@ public class BootIocProj01DependencyInjectionApplication
 		//close container
 		((ConfigurableApplicationContext) ctx).close();
 		//ctx.close();
+		System.out.println("BootIocProj01DependencyInjectionApplication.main()(end)");
 	}
 
 }

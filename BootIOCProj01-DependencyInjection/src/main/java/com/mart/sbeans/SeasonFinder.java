@@ -11,9 +11,15 @@ public class SeasonFinder
 	@Autowired //Field injection
 	private LocalDate ldate;
 	
+	public SeasonFinder()
+	{
+		System.out.println("SeasonFinder::0-arg constructor");
+	}
+	
 	//b.method
 	public String findSeason()
 	{
+		System.out.println("SeasonFinder.findSeason()");
 		//get current month value
 		int month=ldate.getMonthValue(); 
 		
@@ -26,4 +32,5 @@ public class SeasonFinder
 			return "Winter Season";
 	
 
-	}}
+	}
+	}
